@@ -1,0 +1,22 @@
+import checkpoint2helper
+from PIL import Image 
+im1= Image.open('1.jpg')
+im2= Image.open('2.jpg')
+im3= Image.open('3.jpg')
+im4= Image.open('4.jpg')
+im1=checkpoint2helper.make_square(im1)
+im2=checkpoint2helper.make_square(im2)
+im3=checkpoint2helper.make_square(im3)
+im4=checkpoint2helper.make_square(im4)
+
+im1= im1.resize((256,256))
+im2= im2.resize((256,256))
+im3= im3.resize((256,256))
+im4= im4.resize((256,256))
+im= Image.new('RGB', (512,512),'white') 
+im.paste(im1, (0, 0))
+im.paste(im2, (256, 0))
+im.paste(im3, (0, 256))
+im.paste(im4, (256, 256))
+im.save('abc.jpg')
+im.show()
